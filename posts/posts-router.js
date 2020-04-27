@@ -20,7 +20,7 @@ router.get("/user/:id", (req, res) => {
   //returns all posts for the user by their id
   const { id } = req.params;
 
-  Recipes.findPostByUserId(id)
+  Posts.findPostByUserId(id)
     .then((post) => {
       post
         ? res.status(200).json(post)
@@ -37,7 +37,7 @@ router.get("/:id", (req, res) => {
   //returns posts by post id
   const { id } = req.params;
 
-  Recipes.findById(id)
+  Posts.findById(id)
     .then((post) => {
       post
         ? res.status(200).json(post)
