@@ -34,11 +34,12 @@ HEADERS
 Content-Typeapplication/json
 Authorization: token required
 BODY raw
-
 {
 	"username": "usertest",
 	"password": "test"
 }
+
+
 
 POST 
 {{BaseUrl}}/api/posts/user/1
