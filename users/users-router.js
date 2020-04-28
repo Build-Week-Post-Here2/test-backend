@@ -15,7 +15,9 @@ router.delete("/:id", (req, res) => {
   Users.remove(req.params.id)
     .then((count) => {
       if (count > 0) {
-        res.status(200).json({ message: "User has been deleted" });
+        res
+          .status(200)
+          .json({ message: `User with id: ${req.params.id} has been deleted` });
       } else {
         res.status(404).json({ message: "User could not be found" });
       }

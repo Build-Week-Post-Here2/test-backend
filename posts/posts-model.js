@@ -30,7 +30,7 @@ function findById(id) {
 
 function findPostByUserId(id) {
   return db("posts as p")
-    .select("p.id", "p.name", "p.details")
+    .select("p.id", "p.title", "p.body")
     .where("p.user_id", id)
     .orderBy("p.id");
 }
