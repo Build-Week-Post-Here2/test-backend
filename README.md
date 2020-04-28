@@ -27,15 +27,32 @@ BODY raw
 
 POST 
 {{BaseUrl}}/api/auth/login
-POST /api/auth/login This endpoint logs the user in. User has to be registerd.
+This endpoint logs the user in.
+User has to be registerd.
 
 HEADERS
 Content-Typeapplication/json
-Authorization$2a$10$er2jsxF3L10FVdpXoZZfxuWwsls7lKaR/6YoebAfMI6yXGR5GQtFW
+Authorization: token required
 BODY raw
+
 {
 	"username": "usertest",
 	"password": "test"
+}
+
+POST 
+{{BaseUrl}}/api/posts/user/1
+POST request /api/posts/user/1 
+This endpoints add a new recipe to user 1 by id. 
+User has to be logged in.
+
+HEADERS
+Content-Type: token required
+BODY raw
+
+{
+	"title": "New Post",
+	"body": "This is the first post for a subreddit predictor "
 }
 
 
