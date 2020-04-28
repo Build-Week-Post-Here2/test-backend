@@ -14,7 +14,7 @@ module.exports = {
 function add(post, id) {
   const addedPost = { ...post, user_id: id };
   return db("posts")
-    .insert(addedPost)
+    .insert(addedPost, "id")
     .then(() => {
       return addedPost;
     });
