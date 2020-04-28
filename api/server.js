@@ -18,7 +18,7 @@ server.use("/api/users", restricted, usersRouter);
 server.use("/api/posts", restricted, postRouter);
 
 server.get("/", (req, res) => {
-  res.send({ message: "It's alive!" });
+  res.send({ message: "Server for Post Here 2 is running" });
 });
 
 module.exports = server;

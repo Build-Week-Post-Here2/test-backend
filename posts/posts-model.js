@@ -30,14 +30,7 @@ function findById(id) {
 
 function findPostByUserId(id) {
   return db("posts as p")
-    .select(
-      "p.id",
-      "p.name",
-      "p.source",
-      "p.category",
-      "p.instructions",
-      "p.ingredients"
-    )
+    .select("p.id", "p.name", "p.details")
     .where("p.user_id", id)
     .orderBy("p.id");
 }
