@@ -13,6 +13,7 @@ module.exports = {
       },
     },
     migrations: {
+      tableName: "knex_migrations",
       directory: "./data/migrations",
     },
     seeds: {
@@ -21,16 +22,18 @@ module.exports = {
   },
 
   staging: {
-    client: "sqlite3",
+    client: "postgresql",
     connection: {
-      filename: "./data/staging.db3",
+      database: "my_db",
+      user: "username",
+      password: "password",
     },
-    useNullAsDefault: true,
+    pool: {
+      min: 2,
+      max: 10,
+    },
     migrations: {
-      directory: "./data/migrations",
-    },
-    seeds: {
-      directory: "./data/seeds",
+      tableName: "knex_migrations",
     },
   },
 
@@ -42,10 +45,12 @@ module.exports = {
       max: 10,
     },
     migrations: {
+      tableName: "knex_migrations",
       directory: "./data/migrations",
     },
     seeds: {
       directory: "./data/seeds",
     },
+    ssl: true,
   },
 };
