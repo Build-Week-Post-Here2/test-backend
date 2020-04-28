@@ -8,7 +8,7 @@ router.get("/", (req, res) => {
   //return all posts
   Posts.find()
     .then((post) => {
-      res.status(200).json(recipe);
+      res.status(200).json(post);
     })
     .catch((err) => {
       console.log(err);
@@ -71,7 +71,7 @@ router.put("/:id", (req, res) => {
   Posts.findById(id)
     .then((post) => {
       post
-        ? Posts.update(changes, id).then((changes) => {
+        ? Posts.update(changes, id).then((postchanged) => {
             res.status(200).json(changes);
           })
         : res.status(404).json({ error: "no post with that id" });
@@ -88,7 +88,12 @@ router.delete("/:id", (req, res) => {
   Posts.remove(id)
     .then((deleted) => {
       deleted
-        ? res.status(200).json(deleted)
+        ? res
+            .status(200)
+            .json({
+              message: `Post with id: ${id}! has been sucesfully deleted`,
+              deleted,
+            })
         : res.status(404).json({ error: "cannot find post with id" });
     })
     .catch((err) => {
