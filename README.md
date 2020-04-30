@@ -1,10 +1,10 @@
 # test-backend
 ## DOCUMENTATION: 
-https://documenter.getpostman.com/view/10351835/SzfDxQcp?version=latest
+https://documenter.getpostman.com/view/10351835/SzmY8M1Y?version=latest 
 
 Post Here: Subreddit Predictor BW
 
-Base URL: https://post-here-2.herokuapp.com/
+Base URL: https://posthere2.herokuapp.com/
 
 Minimal api endpoints for Post Here 2 BW.
 
